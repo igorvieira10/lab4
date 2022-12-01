@@ -1,6 +1,6 @@
-## Turtle Control Node
+# Turtle Control Node
 
-# Controle de robô uniciclo
+## Controle de robô uniciclo
 
 O pacote em questão realizar o controle de uma tartaturga executada pelo pacote turtlesim. Para isso, é necessario realizar o publish de um tópico /goal (Pose2d).
 
