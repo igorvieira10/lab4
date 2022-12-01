@@ -21,7 +21,7 @@ class ControlTurtle(Node):
         self.y = 0.0 
         self.y_error = 5.0
         self.y_goal = 0.0 
-        self.k_omega = 1.0 
+        self.k_omega = 1.5 
         self.theta = 0.0 
         self.p = 0.0
         self.alpha = 0.0
@@ -58,7 +58,7 @@ class ControlTurtle(Node):
         self.get_logger().info('X erro: "%f"' % self.x_error)
         self.get_logger().info('Y erro: "%f"' % self.y_error)
 
-        if abs(self.x_error) > 0.1 or (self.y_error) > 0.1:
+        if not(abs(self.x_error) < 0.15 and (self.y_error) < 0.15):
             self.p = math.sqrt(pow(self.x_error, 2) + pow(self.y_error, 2))
             self.alpha = math.atan2(self.y_error,self.x_error) - (self.theta)
         else:
